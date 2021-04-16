@@ -1,7 +1,3 @@
-interface isEmailValid {
-    email: string
-}
-
 export const isEmailValid = (email: string): boolean => {
     if (
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(

@@ -58,7 +58,6 @@ const Home: React.FC = () => {
         setSubmitedEmail(email)
         setSubmitedPhone1(phone1)
         setSubmitedPhone2(phone2)
-        console.log('notification')
         setNotification(true)
         setTimeout(() => {
             setNotification(false)
