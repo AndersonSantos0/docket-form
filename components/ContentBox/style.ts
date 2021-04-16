@@ -16,7 +16,7 @@ export const ContentBoxContainer = styled.div<ContentBoxContainerProps>`
     border-top: ${props =>
         props.cold ? '10px solid var(--soft-cold-grey)' : 'none'};
     border-radius: 4px;
-    min-width: 320px;
+    min-width: 230px;
     padding: 32px;
     flex: 1;
     margin: 0 16px;

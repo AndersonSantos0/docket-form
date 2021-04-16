@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable camelcase */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import CarouselItem from '../CarouselItem'
 import { CarouselContainer, CarouselUI, CarouselView } from './style'
 import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai'
@@ -22,6 +22,7 @@ interface CarouselItem {
 const Carousel: React.FC<CarouselProps> = ({ data = [] }) => {
     const [counter, setCounter] = useState(0)
     const [responsive, setResponsive] = useState(false)
+    const CAROUSEL_REF = useRef()
 
     const incrementCounter = () => {
         if (counter < data.length - 2) return setCounter(counter + 1)
@@ -31,15 +32,13 @@ const Carousel: React.FC<CarouselProps> = ({ data = [] }) => {
         if (counter > 0) return setCounter(counter - 1)
     }
 
-    const responsiveMode = width => {
-        if (width < 520) return setResponsive(true)
+    const responsiveMode = () => {
+        if (CAROUSEL_REF.current.offsetWidth < 300) return setResponsive(true)
         return setResponsive(false)
     }
 
     useEffect(() => {
-        window.addEventListener('resize', () =>
-            responsiveMode(window.innerWidth)
-        )
+        window.addEventListener('resize', () => responsiveMode())
 
         return () => window.removeEventListener('resize', () => {})
     }, [])
@@ -51,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({ data = [] }) => {
                 color={'var(--default-lightgray)'}
                 onClick={() => decrementCounter()}
             />
-            <CarouselView>
+            <CarouselView ref={CAROUSEL_REF}>
                 <CarouselContainer
                     responsive={responsive}
                     count={counter}

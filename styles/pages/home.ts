@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components'
 
 export const ScreenContainer = styled.div`
     width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
