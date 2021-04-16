@@ -39,6 +39,9 @@ const Carousel: React.FC<CarouselProps> = ({ data = [] }) => {
     }
 
     useEffect(() => {
+        const carousel = CAROUSEL_REF.current as any
+        if (carousel && carousel.offsetWidth < 300) setResponsive(true)
+
         window.addEventListener('resize', () => responsiveMode())
 
         return () => window.removeEventListener('resize', () => {})
