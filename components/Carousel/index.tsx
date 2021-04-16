@@ -33,7 +33,8 @@ const Carousel: React.FC<CarouselProps> = ({ data = [] }) => {
     }
 
     const responsiveMode = () => {
-        if (CAROUSEL_REF.current.offsetWidth < 300) return setResponsive(true)
+        if (CAROUSEL_REF.current && CAROUSEL_REF.current.offsetWidth < 300)
+            return setResponsive(true)
         return setResponsive(false)
     }
 
