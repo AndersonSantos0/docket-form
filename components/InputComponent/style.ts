@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const InputContainer = styled.div`
-    padding: 8px 0;
+    padding: 8px 4px;
 `
 
 export const InputLabelView = styled.div`
@@ -23,6 +23,7 @@ export const InputView = styled.div`
         border-radius: 2px;
         padding: 8px;
         width: 100%;
+        min-width: 100px;
         outline: none;
         box-sizing: border-box;
         font-family: 'Open Sans';

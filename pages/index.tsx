@@ -133,13 +133,18 @@ const Home: React.FC = () => {
                         required
                         validate={validate}
                     />
-                    <div style={{ display: 'flex', paddingBottom: 32 }}>
+                    <div
+                        style={{
+                            display: 'flex',
+                            paddingBottom: 32,
+                            flexWrap: 'wrap'
+                        }}
+                    >
                         <InputComponent
                             type="phone"
                             value={phone1}
                             onChange={e => setPhone1(e)}
                             placeholder={'(88) 8888-8888'}
-                            style={{ paddingRight: 8 }}
                             label="Telefone 1:"
                             required
                             validate={validate}
@@ -149,7 +154,6 @@ const Home: React.FC = () => {
                             value={phone2}
                             onChange={e => setPhone2(e)}
                             placeholder={'(88) 8888-8888'}
-                            style={{ paddingLeft: 8 }}
                             label="Telefone 2:"
                             validate={validate}
                         />
