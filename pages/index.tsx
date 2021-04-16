@@ -311,7 +311,7 @@ const Home: React.FC = () => {
         if (name.length < 5) return false
         if (!isEmailValid(email)) return false
         if (!isPhoneValid(phone1)) return false
-        if (phone2.length > 0 && !isPhoneValid(phone2)) return false
+        if (phone2.length > 1 && !isPhoneValid(phone2)) return false
         return true
     }
 

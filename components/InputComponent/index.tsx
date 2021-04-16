@@ -47,17 +47,17 @@ const InputComponent: React.FC<InputProps> = ({
     const validateInput = () => {
         switch (type) {
             case 'name':
-                if (required && value.length < 5)
+                if ((required || value.length > 0) && value.length < 5)
                     return setFeedBack('Nome muito curto')
                 setFeedBack('')
                 break
             case 'email':
-                if (required && !isEmailValid(value))
+                if ((required || value.length > 0) && !isEmailValid(value))
                     return setFeedBack('Email inválido')
                 setFeedBack('')
                 break
             case 'phone':
-                if (required && !isPhoneValid(value))
+                if ((required || value.length > 1) && !isPhoneValid(value))
                     return setFeedBack('Telefone inválido')
                 setFeedBack('')
                 break
