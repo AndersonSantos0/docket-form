@@ -8,6 +8,7 @@ import CoverArt from '../components/CoverArt'
 import InputComponent from '../components/InputComponent'
 import Logo from '../components/Logo'
 import NotificationComponent from '../components/NotificationComponent'
+import Head from 'next/head'
 import {
     BoxTitle,
     BoxSubTitle,
@@ -317,6 +318,9 @@ const Home: React.FC = () => {
 
     return (
         <ScreenContainer>
+            <Head>
+                <title>Docket Form</title>
+            </Head>
             <HomeHeader>
                 <HomeHeaderContent>
                     <NotificationComponent
