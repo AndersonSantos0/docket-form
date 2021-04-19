@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const InputContainer = styled.div`
     padding: 8px 4px;
+    flex: 1;
+    min-width: 128px;
 `
 
 export const InputLabelView = styled.div`
@@ -27,6 +29,7 @@ export const InputView = styled.div`
         outline: none;
         box-sizing: border-box;
         font-family: 'Open Sans';
+        flex: 1;
     }
 
     > .input:focus {

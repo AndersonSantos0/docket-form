@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                 <title>Docket Form</title>
             </Head>
             <HomeHeader>
-                <HomeHeaderContent>
+                <HomeHeaderContent responsive={responsive}>
                     <NotificationComponent
                         style={{ alignSelf: 'center', justifySelf: 'center' }}
                         text={'Candidatura enviada com sucesso!'}

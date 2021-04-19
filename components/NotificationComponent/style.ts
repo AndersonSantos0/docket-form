@@ -7,7 +7,7 @@ interface NotificationContainerProps {
 export const NotificationContainer = styled.div<NotificationContainerProps>`
     background-color: #73e6cbcc;
     border: solid 2px #00966c;
-    position: absolute;
+    position: fixed;
     border-radius: 30px;
     padding: 0 16px;
     display: flex;

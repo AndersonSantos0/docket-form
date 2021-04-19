@@ -30,10 +30,14 @@ export const CoverView = styled.div`
     }
 `
 
-export const HomeHeaderContent = styled.div`
+interface HomeHeaderContentProps {
+    responsive?: boolean
+}
+
+export const HomeHeaderContent = styled.div<HomeHeaderContentProps>`
     position: relative;
     z-index: 2;
-    width: 75vw;
+    width: ${props => (props.responsive ? 'calc(100vw - 16px)' : '75vw')};
     max-width: 1100px;
     display: flex;
     align-self: center;
