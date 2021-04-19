@@ -35,6 +35,7 @@ const Home: React.FC = () => {
     const [submitedPhone1, setSubmitedPhone1] = useState('')
     const [submitedPhone2, setSubmitedPhone2] = useState('')
     const [projects, setProjects] = useState([])
+    const [carouselLoading, setCarouselLoading] = useState(false)
     const [responsive, setResponsive] = useState(false)
     const [notification, setNotification] = useState(false)
     const [submited, setSubmited] = useState(false)
@@ -79,8 +80,10 @@ const Home: React.FC = () => {
     }, [])
 
     const getProjectsAPI = () => {
+        setCarouselLoading(true)
         axios.get('https://picsum.photos/v2/list').then(response => {
             setProjects(response.data)
+            setCarouselLoading(false)
         })
     }
     return (
@@ -197,7 +200,7 @@ const Home: React.FC = () => {
                             </BoxText>
                         )}
                     </div>
-                    <Carousel data={projects} />
+                    <Carousel loading={carouselLoading} data={projects} />
                 </ContentBoxContainer>
             </HomeContent>
             <HomeFooter>
